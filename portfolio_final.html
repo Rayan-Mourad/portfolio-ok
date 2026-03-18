@@ -786,7 +786,7 @@ tr:hover td { background: #fafaf8; }
 
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
   gap: 20px;
 }
 .cert-card {
@@ -1126,7 +1126,7 @@ tr:hover td { background: #fafaf8; }
     <div class="hero-cell"><div class="hc-label">Disponibilité</div><div class="hc-val">Sept. 2025</div></div>
     <div class="hero-cell"><div class="hc-label">Recherche</div><div class="hc-val">Alternance / Stage</div></div>
     <div class="hero-cell"><div class="hc-label">Lycée</div><div class="hc-val">ORT Daniel Mayer — Montreuil</div></div>
-    <div class="hero-cell"><div class="hc-label">Permis</div><div class="hc-val">[B / En cours / —]</div></div>
+    <div class="hero-cell"><div class="hc-label">Permis</div><div class="hc-val">[B / Obtenu / Véhiculé]</div></div>
   </div>
 
   <div class="hero-eyebrow">Portfolio · Réseaux & Infrastructure</div>
@@ -1396,6 +1396,27 @@ tr:hover td { background: #fafaf8; }
       </div>
     </div>
 
+    <!-- Projet 6 : GoFish -->
+    <div class="proj-card" style="border-top:3px solid #ef4444;">
+      <div class="proj-top">
+        <div class="proj-ico">🎣</div>
+        <span class="status s-done">Terminé</span>
+      </div>
+      <div class="proj-body">
+        <h3 class="proj-title">Outil de phishing simulé (GoFish)</h3>
+        <p class="proj-desc">Développement d'un outil de cybersécurité pour simuler des attaques de phishing, permettant de tester la vigilance des utilisateurs et d'analyser leurs réactions face aux tentatives d'hameçonnage.</p>
+        <div class="pt-list">
+          <span class="pt">VM Linux</span>
+          <span class="pt">Phishing</span>
+          <span class="pt">Cybersécurité</span>
+          <span class="pt">Simulation</span>
+        </div>
+        <button onclick="openPdfModal('gofish.pdf', 'Outil phishing GoFish')" style="margin-top:0.8rem;background:#ef4444;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:0.82rem;font-weight:700;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#dc2626'" onmouseout="this.style.background='#ef4444'">
+          📄 Voir le compte rendu →
+        </button>
+      </div>
+    </div>
+
   </div>
 
   <!-- ============================================================
@@ -1517,6 +1538,27 @@ tr:hover td { background: #fafaf8; }
     </div>
   </div>
 
+  <div class="proj-grid">
+
+    <div class="proj-card" style="border-top:3px solid #10b981;">
+      <div class="proj-top">
+        <div class="proj-ico">🔧</div>
+        <span class="status s-done">Réalisé en entreprise</span>
+      </div>
+      <div class="proj-body">
+        <h3 class="proj-title">Installation d'un serveur syslog</h3>
+        <p class="proj-desc">Configuration et déploiement d'un serveur syslog pour la centralisation des logs dans l'infrastructure réseau de l'entreprise, permettant une meilleure surveillance et réponse aux incidents.</p>
+        <div class="pt-list">
+          <span class="pt">Linux</span>
+          <span class="pt">rsyslog</span>
+          <span class="pt">Configuration réseau</span>
+          <span class="pt">Logs centralisés</span>
+        </div>
+        <button onclick="openPdfModal('Projet_Centralisation_Logs_SYSLOG.pdf', 'Projet centralisation logs SYSLOG')" style="background:#10b981;color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:0.82rem;font-weight:700;cursor:pointer;transition:background 0.2s;margin-top:0.5rem;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">📄 Voir le projet →</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ── Présentation PowerPoint IDF Habitat ── -->
   <div style="margin-top:2.5rem; border-top:1px solid rgba(0,0,0,0.08); padding-top:2rem;">
     <div class="chip" style="margin-bottom:1rem;">📊 Présentation PowerPoint</div>
@@ -1611,24 +1653,26 @@ tr:hover td { background: #fafaf8; }
       <div class="v-tag">Cybersécurité</div>
       <div class="v-title">Ransomwares & sécurité des infrastructures</div>
       <div class="v-desc">Les attaques par ransomware ciblent de plus en plus les hôpitaux, collectivités et PME. Je surveille les publications de l'ANSSI pour comprendre les vecteurs d'attaque et les contre-mesures recommandées.</div>
-      <div class="v-src">Sources : ANSSI · CERT-FR · Bleeping Computer</div>
+      <div class="v-src">Sources : <a href="https://www.ssi.gouv.fr/" target="_blank">ANSSI</a> · <a href="https://www.cert.ssi.gouv.fr/" target="_blank">CERT-FR</a> · <a href="https://www.bleepingcomputer.com/" target="_blank">Bleeping Computer</a></div>
     </div>
 
     <div class="v-card">
       <div class="v-tag">Cloud & Hybrid</div>
       <div class="v-title">Migration vers le Cloud et infrastructure hybride</div>
       <div class="v-desc">Azure AD, Microsoft 365 et AWS redéfinissent l'administration système. Comprendre ces environnements hybrides est essentiel pour les futurs administrateurs réseaux.</div>
-      <div class="v-src">Sources : Microsoft Tech · AWS Blog · Infosec Institute</div>
+      <div class="v-src">Sources : <a href="https://blogs.microsoft.com/" target="_blank">Microsoft Tech</a> · <a href="https://aws.amazon.com/blogs/" target="_blank">AWS Blog</a> · <a href="https://www.infosecinstitute.com/" target="_blank">Infosec Institute</a></div>
     </div>
 
     <div class="v-card">
       <div class="v-tag">Zero Trust</div>
       <div class="v-title">Architecture Zero Trust & gestion des identités</div>
       <div class="v-desc">Le modèle Zero Trust remplace la sécurité périmétrique. La gestion fine des identités, des droits (IAM) et l'authentification multifacteur (MFA) deviennent le standard en entreprise.</div>
-      <div class="v-src">Sources : NIST · Gartner · CyberArk Blog</div>
+      <div class="v-src">Sources : <a href="https://www.nist.gov/cybersecurity" target="_blank">NIST</a> · <a href="https://www.gartner.com/" target="_blank">Gartner</a> · <a href="https://www.cyberark.com/" target="_blank">CyberArk Blog</a></div>
     </div>
 
   </div>
+
+
 </section>
 
 <!-- ── S9 QUALITÉS ── -->
